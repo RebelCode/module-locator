@@ -1,5 +1,5 @@
 {
-    "name": "rebelcode/plugin-modularity",
+    "name": "rebelcode/module-locator",
     "description": "A modular system for WordPress plugins",
     "type": "library",
     "license": "MIT",
