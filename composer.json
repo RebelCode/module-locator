@@ -1,6 +1,6 @@
 {
     "name": "rebelcode/module-locator",
-    "description": "A modular system for WordPress plugins",
+    "description": "A locator of module configs",
     "type": "library",
     "license": "MIT",
     "authors": [
