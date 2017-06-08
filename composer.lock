@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "78b480b0a2b4f1ff92cf30f4743bcbe8",
+    "content-hash": "6f9a6613199727a756f07ddb6d69fdcb",
     "packages": [
         {
             "name": "dhii/data-identifiable-interface",
@@ -133,6 +133,50 @@
             ],
             "description": "Interfaces for modular systems.",
             "time": "2017-06-05 15:32:40"
+        },
+        {
+            "name": "dhii/module-locator-abstract",
+            "version": "dev-task/implement-locator",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Dhii/module-locator-abstract.git",
+                "reference": "b5650b1ae85eed02b62619414c099af7d2f03ac3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Dhii/module-locator-abstract/zipball/b5650b1ae85eed02b62619414c099af7d2f03ac3",
+                "reference": "b5650b1ae85eed02b62619414c099af7d2f03ac3",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3 | ^7.0"
+            },
+            "require-dev": {
+                "aza/phpgen": "^1.0",
+                "codeclimate/php-test-reporter": "<=0.3.2",
+                "dhii/php-cs-fixer-config": "dev-php-5.3",
+                "mikey179/vfsstream": "^1.6.4",
+                "phpunit/phpunit": "^4.8",
+                "ptrofimov/xpmock": "^1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dhii\\Modular\\Locator\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dhii Team",
+                    "email": "development@dhii.co"
+                }
+            ],
+            "description": "Common functionality for module locators",
+            "time": "2017-06-08 21:33:24"
         }
     ],
     "packages-dev": [
@@ -193,7 +237,7 @@
                 "php",
                 "serialization"
             ],
-            "time": "2013-05-28T13:04:29+00:00"
+            "time": "2013-05-28 13:04:29"
         },
         {
             "name": "codeclimate/php-test-reporter",
@@ -542,7 +586,7 @@
             ],
             "description": "Virtual file system to mock the real file system in unit tests.",
             "homepage": "http://vfs.bovigo.org/",
-            "time": "2017-03-30T09:35:07+00:00"
+            "time": "2017-03-30 09:35:07"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -1774,12 +1818,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
-                "reference": "6694bfe6ac1ab1b06bda40c98c98fa1d06739296"
+                "reference": "9d40ad561ed0ca824de0c514077dc39e5d6b2605"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/debug/zipball/6694bfe6ac1ab1b06bda40c98c98fa1d06739296",
-                "reference": "6694bfe6ac1ab1b06bda40c98c98fa1d06739296",
+                "url": "https://api.github.com/repos/symfony/debug/zipball/9d40ad561ed0ca824de0c514077dc39e5d6b2605",
+                "reference": "9d40ad561ed0ca824de0c514077dc39e5d6b2605",
                 "shasum": ""
             },
             "require": {
@@ -1822,7 +1866,7 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-01 21:02:15"
+            "time": "2017-06-07 14:09:28"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -2252,6 +2296,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "dhii/modular-interface": 20,
+        "dhii/module-locator-abstract": 20,
         "dhii/php-cs-fixer-config": 20
     },
     "prefer-stable": false,
