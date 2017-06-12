@@ -7,17 +7,17 @@
     "content-hash": "6f9a6613199727a756f07ddb6d69fdcb",
     "packages": [
         {
-            "name": "dhii/data-identifiable-interface",
-            "version": "dev-master",
+            "name": "dhii/data-key-value-aware-interface",
+            "version": "v0.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Dhii/data-identifiable-interface.git",
-                "reference": "59e160c85c9d9246ce51ad611ce2bb686ba3dc2d"
+                "url": "https://github.com/Dhii/data-key-value-aware-interface.git",
+                "reference": "220232bc9040fab78a6c039f5a4a5f9542317bdc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/data-identifiable-interface/zipball/59e160c85c9d9246ce51ad611ce2bb686ba3dc2d",
-                "reference": "59e160c85c9d9246ce51ad611ce2bb686ba3dc2d",
+                "url": "https://api.github.com/repos/Dhii/data-key-value-aware-interface/zipball/220232bc9040fab78a6c039f5a4a5f9542317bdc",
+                "reference": "220232bc9040fab78a6c039f5a4a5f9542317bdc",
                 "shasum": ""
             },
             "require": {
@@ -26,7 +26,7 @@
             "require-dev": {
                 "codeclimate/php-test-reporter": "<=0.3.2",
                 "dhii/php-cs-fixer-config": "dev-php-5.3",
-                "phpunit/phpunit": "^4.8",
+                "phpunit/phpunit": "4.*",
                 "ptrofimov/xpmock": "^1.1"
             },
             "type": "library",
@@ -45,50 +45,8 @@
                     "email": "development@dhii.co"
                 }
             ],
-            "description": "Interfaces for objects that are identifiable.",
-            "time": "2017-03-07 16:25:09"
-        },
-        {
-            "name": "dhii/factory-interface",
-            "version": "dev-task/initial-interfaces",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Dhii/factory-interface.git",
-                "reference": "09ce63b7f023c4386ba280444b2d091fda548c6e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/factory-interface/zipball/09ce63b7f023c4386ba280444b2d091fda548c6e",
-                "reference": "09ce63b7f023c4386ba280444b2d091fda548c6e",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.3 | ^7.0"
-            },
-            "require-dev": {
-                "codeclimate/php-test-reporter": "<=0.3.2",
-                "dhii/php-cs-fixer-config": "dev-php-5.3",
-                "phpunit/phpunit": "^4.8",
-                "psr/container": "^1.0",
-                "ptrofimov/xpmock": "^1.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Dhii\\Factory\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Dhii Team",
-                    "email": "development@dhii.co"
-                }
-            ],
-            "time": "2017-06-02 13:01:12"
+            "description": "Interfaces that aim to increase interoperability of value objects",
+            "time": "2017-01-21T17:35:30+00:00"
         },
         {
             "name": "dhii/modular-interface",
@@ -96,17 +54,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dhii/modular-interface.git",
-                "reference": "4c0b6e53b74b986c556e0e9b2ad7a9b906213bde"
+                "reference": "dec81dd419d756e5735e3826aef630c79b53e898"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/modular-interface/zipball/4c0b6e53b74b986c556e0e9b2ad7a9b906213bde",
-                "reference": "4c0b6e53b74b986c556e0e9b2ad7a9b906213bde",
+                "url": "https://api.github.com/repos/Dhii/modular-interface/zipball/dec81dd419d756e5735e3826aef630c79b53e898",
+                "reference": "dec81dd419d756e5735e3826aef630c79b53e898",
                 "shasum": ""
             },
             "require": {
-                "dhii/data-identifiable-interface": "dev-master",
-                "dhii/factory-interface": "dev-task/initial-interfaces",
+                "dhii/data-key-value-aware-interface": "^0.1",
                 "php": "^5.3 | ^7.0"
             },
             "require-dev": {
@@ -132,7 +89,7 @@
                 }
             ],
             "description": "Interfaces for modular systems.",
-            "time": "2017-06-05 15:32:40"
+            "time": "2017-06-12 16:05:00"
         },
         {
             "name": "dhii/module-locator-abstract",
@@ -1875,12 +1832,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
-                "reference": "d582eb3f548bb9b975f89d910ac846a197e49123"
+                "reference": "db08b1b2f9adb5d59a5e838d1577e73c418e05ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/d582eb3f548bb9b975f89d910ac846a197e49123",
-                "reference": "d582eb3f548bb9b975f89d910ac846a197e49123",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/db08b1b2f9adb5d59a5e838d1577e73c418e05ed",
+                "reference": "db08b1b2f9adb5d59a5e838d1577e73c418e05ed",
                 "shasum": ""
             },
             "require": {
@@ -1930,7 +1887,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-06 04:51:36"
+            "time": "2017-06-12T16:03:21+00:00"
         },
         {
             "name": "symfony/filesystem",
@@ -2193,12 +2150,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "5f6b55e907b65fdb1cefe25b82604049f1d40e81"
+                "reference": "02878ee742708dd663c129a1bd3ad1b628098b00"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/5f6b55e907b65fdb1cefe25b82604049f1d40e81",
-                "reference": "5f6b55e907b65fdb1cefe25b82604049f1d40e81",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/02878ee742708dd663c129a1bd3ad1b628098b00",
+                "reference": "02878ee742708dd663c129a1bd3ad1b628098b00",
                 "shasum": ""
             },
             "require": {
@@ -2240,7 +2197,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-02 22:30:16"
+            "time": "2017-06-12T16:03:21+00:00"
         },
         {
             "name": "webmozart/assert",
