@@ -2,7 +2,7 @@
     "name": "rebelcode/module-locator",
     "description": "A locator of module configs",
     "type": "library",
-    "license": "MIT",
+    "license": "GPL-3.0",
     "authors": [
         {
             "name": "RebelCode",
