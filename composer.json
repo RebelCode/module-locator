@@ -14,7 +14,8 @@
         "php": "^5.4 | ^7.0",
         "dhii/modular-interface": "dev-task/initial-interface",
         "dhii/module-locator-abstract": "dev-task/implement-locator",
-        "dhii/validation-interface": "^0.1"
+        "dhii/validation-interface": "^0.1",
+        "dhii/i18n-helper-base": "dev-develop"
     },
     "require-dev": {
         "phpunit/phpunit": "^4.8",
