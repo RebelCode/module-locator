@@ -2,7 +2,7 @@
     "name": "rebelcode/module-locator",
     "description": "A locator of module configs",
     "type": "library",
-    "license": "MIT",
+    "license": "GPL-3.0",
     "authors": [
         {
             "name": "RebelCode",
@@ -11,17 +11,24 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "php": "^5.3 | ^7.0"
+        "php": "^5.4 | ^7.0",
+        "dhii/modular-interface": "dev-task/initial-interface",
+        "dhii/module-locator-abstract": "dev-task/implement-locator",
+        "dhii/validation-interface": "^0.1",
+        "dhii/i18n-helper-base": "dev-develop",
+        "rebelcode/module-config-interface": "dev-develop"
     },
     "require-dev": {
         "phpunit/phpunit": "^4.8",
         "ptrofimov/xpmock": "^1.1",
         "dhii/php-cs-fixer-config": "dev-php-5.3",
-        "codeclimate/php-test-reporter": "<=0.3.2"
+        "codeclimate/php-test-reporter": "<=0.3.2",
+        "mikey179/vfsStream": "^1.6.4",
+        "aza/phpgen": "^1.0"
     },
     "autoload": {
         "psr-4": {
-            "RebelCode\\Modular\\": "src"
+            "RebelCode\\Modular\\Locator\\": "src"
         }
     }
 }
