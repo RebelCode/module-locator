@@ -100,16 +100,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dhii/modular-interface.git",
-                "reference": "e3d396498239c0d1751c70ff2d751118bcb4195f"
+                "reference": "d74a7ec692b4696e4db93ed8db90a1f49b7a25dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/modular-interface/zipball/e3d396498239c0d1751c70ff2d751118bcb4195f",
-                "reference": "e3d396498239c0d1751c70ff2d751118bcb4195f",
+                "url": "https://api.github.com/repos/Dhii/modular-interface/zipball/d74a7ec692b4696e4db93ed8db90a1f49b7a25dd",
+                "reference": "d74a7ec692b4696e4db93ed8db90a1f49b7a25dd",
                 "shasum": ""
             },
             "require": {
-                "dhii/data-key-value-aware-interface": "^0.1",
+                "dhii/module-interface": "dev-develop",
                 "php": "^5.3 | ^7.0"
             },
             "require-dev": {
@@ -135,7 +135,50 @@
                 }
             ],
             "description": "Interfaces for modular systems.",
-            "time": "2017-06-16 07:31:41"
+            "time": "2017-06-22 08:29:29"
+        },
+        {
+            "name": "dhii/module-interface",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Dhii/module-interface.git",
+                "reference": "2103f11abdaa2f460a1ee4e702e9a30772085a02"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Dhii/module-interface/zipball/2103f11abdaa2f460a1ee4e702e9a30772085a02",
+                "reference": "2103f11abdaa2f460a1ee4e702e9a30772085a02",
+                "shasum": ""
+            },
+            "require": {
+                "dhii/data-key-value-aware-interface": "^0.1",
+                "php": "^5.3 | ^7.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "<=0.3.2",
+                "dhii/php-cs-fixer-config": "dev-php-5.3",
+                "phpunit/phpunit": "^4.8",
+                "ptrofimov/xpmock": "^1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dhii\\Modular\\Module\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dhii Team",
+                    "email": "development@dhii.co"
+                }
+            ],
+            "description": "Interfaces for modules",
+            "time": "2017-06-19 11:11:58"
         },
         {
             "name": "dhii/module-locator-abstract",
@@ -324,7 +367,7 @@
                 "php",
                 "serialization"
             ],
-            "time": "2013-05-28 13:04:29"
+            "time": "2013-05-28T13:04:29+00:00"
         },
         {
             "name": "codeclimate/php-test-reporter",
@@ -422,7 +465,7 @@
                 }
             ],
             "description": "A default PHP CS Fixer config implementation",
-            "time": "2016-09-03 14:45:03"
+            "time": "2016-09-03T14:45:03+00:00"
         },
         {
             "name": "doctrine/instantiator",
@@ -476,7 +519,7 @@
                 "constructor",
                 "instantiate"
             ],
-            "time": "2017-02-16 16:15:51"
+            "time": "2017-02-16T16:15:51+00:00"
         },
         {
             "name": "friendsofphp/php-cs-fixer",
@@ -673,7 +716,7 @@
             ],
             "description": "Virtual file system to mock the real file system in unit tests.",
             "homepage": "http://vfs.bovigo.org/",
-            "time": "2017-03-30 09:35:07"
+            "time": "2017-03-30T09:35:07+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -727,7 +770,7 @@
                 "reflection",
                 "static analysis"
             ],
-            "time": "2017-04-30 11:58:12"
+            "time": "2017-04-30T11:58:12+00:00"
         },
         {
             "name": "phpdocumentor/reflection-docblock",
@@ -882,7 +925,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2017-05-31 16:22:32"
+            "time": "2017-05-31T16:22:32+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -944,7 +987,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-10-06 15:47:00"
+            "time": "2015-10-06T15:47:00+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -991,7 +1034,7 @@
                 "filesystem",
                 "iterator"
             ],
-            "time": "2016-10-03 07:40:28"
+            "time": "2016-10-03T07:40:28+00:00"
         },
         {
             "name": "phpunit/php-text-template",
@@ -1081,7 +1124,7 @@
             "keywords": [
                 "timer"
             ],
-            "time": "2017-03-07 15:42:04"
+            "time": "2017-03-07T15:42:04+00:00"
         },
         {
             "name": "phpunit/php-token-stream",
@@ -1130,7 +1173,7 @@
             "keywords": [
                 "tokenizer"
             ],
-            "time": "2017-03-07 08:21:50"
+            "time": "2017-03-07T08:21:50+00:00"
         },
         {
             "name": "phpunit/phpunit",
@@ -1138,12 +1181,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "912b8c1e9e399a18312f30d7d9d25a6c20035709"
+                "reference": "46023de9a91eec7dfb06cc56cb4e260017298517"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/912b8c1e9e399a18312f30d7d9d25a6c20035709",
-                "reference": "912b8c1e9e399a18312f30d7d9d25a6c20035709",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/46023de9a91eec7dfb06cc56cb4e260017298517",
+                "reference": "46023de9a91eec7dfb06cc56cb4e260017298517",
                 "shasum": ""
             },
             "require": {
@@ -1202,7 +1245,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2017-03-04 06:40:26"
+            "time": "2017-06-21T08:07:12+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -1258,7 +1301,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2015-10-02 06:51:40"
+            "time": "2015-10-02T06:51:40+00:00"
         },
         {
             "name": "psr/log",
@@ -1305,7 +1348,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2016-10-10 12:19:37"
+            "time": "2016-10-10T12:19:37+00:00"
         },
         {
             "name": "ptrofimov/xpmock",
@@ -1396,7 +1439,7 @@
                 "github",
                 "test"
             ],
-            "time": "2017-02-25 12:10:28"
+            "time": "2017-02-25T12:10:28+00:00"
         },
         {
             "name": "sebastian/comparator",
@@ -1460,7 +1503,7 @@
                 "compare",
                 "equality"
             ],
-            "time": "2017-03-07 10:34:43"
+            "time": "2017-03-07T10:34:43+00:00"
         },
         {
             "name": "sebastian/diff",
@@ -1512,7 +1555,7 @@
             "keywords": [
                 "diff"
             ],
-            "time": "2017-05-22 07:24:03"
+            "time": "2017-05-22T07:24:03+00:00"
         },
         {
             "name": "sebastian/environment",
@@ -1562,7 +1605,7 @@
                 "environment",
                 "hhvm"
             ],
-            "time": "2017-02-28 08:18:59"
+            "time": "2017-02-28T08:18:59+00:00"
         },
         {
             "name": "sebastian/exporter",
@@ -1629,7 +1672,7 @@
                 "export",
                 "exporter"
             ],
-            "time": "2017-02-26 13:09:30"
+            "time": "2017-02-26T13:09:30+00:00"
         },
         {
             "name": "sebastian/global-state",
@@ -1680,7 +1723,7 @@
             "keywords": [
                 "global state"
             ],
-            "time": "2017-02-23 14:11:06"
+            "time": "2017-02-23T14:11:06+00:00"
         },
         {
             "name": "sebastian/recursion-context",
@@ -1733,7 +1776,7 @@
             ],
             "description": "Provides functionality to recursively process PHP variables",
             "homepage": "http://www.github.com/sebastianbergmann/recursion-context",
-            "time": "2016-10-03 07:41:43"
+            "time": "2016-10-03T07:41:43+00:00"
         },
         {
             "name": "sebastian/version",
@@ -1828,7 +1871,7 @@
             ],
             "description": "Symfony Config Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-02 18:32:02"
+            "time": "2017-06-02T18:32:02+00:00"
         },
         {
             "name": "symfony/console",
@@ -1898,7 +1941,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-10 12:08:03"
+            "time": "2017-06-10T12:08:03+00:00"
         },
         {
             "name": "symfony/debug",
@@ -1954,7 +1997,7 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-07 14:09:28"
+            "time": "2017-06-07T14:09:28+00:00"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -2017,7 +2060,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-12 16:03:21"
+            "time": "2017-06-12T16:03:21+00:00"
         },
         {
             "name": "symfony/filesystem",
@@ -2066,7 +2109,7 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
-            "time": "2017-05-28 14:09:32"
+            "time": "2017-05-28T14:09:32+00:00"
         },
         {
             "name": "symfony/finder",
@@ -2115,7 +2158,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-01 21:02:15"
+            "time": "2017-06-01T21:02:15+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -2174,7 +2217,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2017-06-14 15:44:48"
+            "time": "2017-06-14T15:44:48+00:00"
         },
         {
             "name": "symfony/process",
@@ -2223,7 +2266,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-09 13:37:35"
+            "time": "2017-06-09T13:37:35+00:00"
         },
         {
             "name": "symfony/stopwatch",
@@ -2272,7 +2315,7 @@
             ],
             "description": "Symfony Stopwatch Component",
             "homepage": "https://symfony.com",
-            "time": "2017-05-17 16:21:40"
+            "time": "2017-05-17T16:21:40+00:00"
         },
         {
             "name": "symfony/yaml",
@@ -2327,7 +2370,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-14 20:38:21"
+            "time": "2017-06-14T20:38:21+00:00"
         },
         {
             "name": "webmozart/assert",
@@ -2377,7 +2420,7 @@
                 "check",
                 "validate"
             ],
-            "time": "2016-11-23 20:04:41"
+            "time": "2016-11-23T20:04:41+00:00"
         }
     ],
     "aliases": [],
