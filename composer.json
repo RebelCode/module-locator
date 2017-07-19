@@ -31,5 +31,9 @@
         "psr-4": {
             "RebelCode\\Modular\\Locator\\": "src"
         }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "csfix": "php-cs-fixer fix -vvv"
     }
 }
