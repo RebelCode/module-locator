@@ -12,8 +12,9 @@
     "minimum-stability": "dev",
     "require": {
         "php": "^5.4 | ^7.0",
-        "dhii/modular-interface": "dev-task/initial-interface",
-        "dhii/module-locator-abstract": "dev-task/implement-locator",
+        "dhii/data-container-interface": "dev-task/initial-interfaces",
+        "dhii/modular-interface": "dev-develop",
+        "dhii/module-locator-abstract": "dev-develop",
         "dhii/validation-interface": "^0.1",
         "dhii/i18n-helper-base": "dev-develop",
         "rebelcode/module-config-interface": "dev-develop"
