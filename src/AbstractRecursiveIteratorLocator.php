@@ -85,7 +85,7 @@ abstract class AbstractRecursiveIteratorLocator extends AbstractIteratorLocator
      *
      * @since [*next-version*]
      *
-     * @param string     $message        The exception message, if any.
+     * @param string    $message        The exception message, if any.
      * @param Exception $innerException The inner exception, if any.
      *
      * @return ModuleLocatorExceptionInterface The new exception.
