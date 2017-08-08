@@ -2,14 +2,14 @@
 
 namespace RebelCode\Modular\Locator;
 
-use Dhii\I18n\StringTranslatingTrait;
 use Dhii\I18n\StringTranslatorAwareTrait;
+use Dhii\I18n\StringTranslatorConsumingTrait;
+use Dhii\I18n\StringTranslatorInterface;
 use Dhii\Modular\Locator\ModuleLocatorExceptionInterface;
 use Dhii\Modular\Locator\ModuleLocatorInterface;
 use Dhii\Validation\Exception\ValidationFailedExceptionInterface;
 use Dhii\Validation\ValidatorInterface;
 use Exception;
-use Iterator;
 use RebelCode\Modular\Config\ConfigInterface as Cfg;
 use RecursiveIterator;
 
@@ -29,7 +29,7 @@ class RecursiveIteratorLocator extends AbstractRecursiveIteratorLocator implemen
     /*
      * @since [*next-version*]
      */
-    use StringTranslatingTrait;
+    use StringTranslatorConsumingTrait;
 
     /**
      * The validator used to validate configuration.
@@ -41,14 +41,25 @@ class RecursiveIteratorLocator extends AbstractRecursiveIteratorLocator implemen
     protected $configValidator;
 
     /**
+     * Constructor.
+     *
      * @since [*next-version*]
      *
-     * @param RecursiveIterator  $iterator  The recursive iterable containing the module config iterators.
-     * @param ValidatorInterface $validator The validator to use for config validation.
+     * @param RecursiveIterator         $iterator   The recursive iterable containing the module config iterators.
+     * @param ValidatorInterface        $validator  The validator to use for config validation.
+     * @param StringTranslatorInterface $translator The translator to use for validation messages and logging.
      */
-    public function __construct(RecursiveIterator $iterator, ValidatorInterface $validator)
-    {
+    public function __construct(
+        RecursiveIterator $iterator,
+        ValidatorInterface $validator,
+        StringTranslatorInterface $translator = null
+    ) {
         $this->_setConfigValidator($validator);
+
+        if ($translator !== null) {
+            $this->_setTranslator($translator);
+        }
+
         $this->_construct();
     }
 
