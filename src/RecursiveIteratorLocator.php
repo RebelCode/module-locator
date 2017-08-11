@@ -54,7 +54,8 @@ class RecursiveIteratorLocator extends AbstractRecursiveIteratorLocator implemen
         ValidatorInterface $validator,
         StringTranslatorInterface $translator = null
     ) {
-        $this->_setConfigValidator($validator);
+        $this->_setConfigValidator($validator)
+             ->_setIterator($iterator);
 
         if ($translator !== null) {
             $this->_setTranslator($translator);
