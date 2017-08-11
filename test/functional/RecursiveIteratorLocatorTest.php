@@ -2,6 +2,7 @@
 
 namespace RebelCode\Modular\Locator\FuncTest;
 
+use Dhii\I18n\StringTranslatorInterface;
 use Dhii\Validation\ValidatorInterface;
 use RebelCode\Modular\Locator\RecursiveIteratorLocator;
 use RecursiveArrayIterator;
@@ -14,32 +15,6 @@ use Xpmock\TestCase;
  */
 class RecursiveIteratorLocatorTest extends TestCase
 {
-    /**
-     * The classname of the test subject.
-     *
-     * @since [*next-version*]
-     */
-    const TEST_SUBJECT_CLASSNAME = 'RebelCode\\Modular\\Locator\\RecursiveIteratorLocator';
-
-    /**
-     * Creates a new instance of the test subject.
-     *
-     * @since [*next-version*]
-     *
-     * @param array $data The config data.
-     *
-     * @return RecursiveIteratorLocator
-     */
-    public function createInstance($data = [])
-    {
-        $mock = $this->mock(static::TEST_SUBJECT_CLASSNAME)
-            ->_getIterator($this->createIterator($data))
-            ->_getConfigValidator($this->createValidator())
-            ->new();
-
-        return $mock;
-    }
-
     /**
      * Creates a new iterator instance for a given set of config data.
      *
@@ -71,16 +46,32 @@ class RecursiveIteratorLocatorTest extends TestCase
     }
 
     /**
+     * Creates a new instance of a translator.
+     *
+     * @since [*next-version*]
+     *
+     * @return StringTranslatorInterface The new translator.
+     */
+    public function createTranslator()
+    {
+        $mock = $this->mock('Dhii\\I18n\\StringTranslatorInterface')
+            ->translate()
+            ->new();
+
+        return $mock;
+    }
+
+    /**
      * Tests whether a valid instance of the test subject can be created.
      *
      * @since [*next-version*]
      */
     public function testCanBeCreated()
     {
-        $subject = $this->createInstance();
+        $subject = new RecursiveIteratorLocator($this->createIterator([]), $this->createValidator());
 
         $this->assertInstanceOf(
-            static::TEST_SUBJECT_CLASSNAME, $subject,
+            'Dhii\\Modular\\Locator\\ModuleLocatorInterface', $subject,
             'Subject is not a valid instance'
         );
     }
@@ -92,7 +83,7 @@ class RecursiveIteratorLocatorTest extends TestCase
      */
     public function testCanLocateModules()
     {
-        $locator = $this->createInstance([
+        $iterator = $this->createIterator([
             [
                 'name' => 'my-module',
             ],
@@ -110,6 +101,7 @@ class RecursiveIteratorLocatorTest extends TestCase
                 },
             ],
         ]);
+        $locator = new RecursiveIteratorLocator($iterator, $this->createValidator());
 
         $config = $locator->locate();
 
