@@ -77,6 +77,25 @@ class RecursiveIteratorLocatorTest extends TestCase
     }
 
     /**
+     * Tests the constructor to determine whether the properties are being set correctly.
+     *
+     * @since [*next-version*]
+     */
+    public function testConstructor()
+    {
+        $iterator   = $this->createIterator([]);
+        $validator  = $this->createValidator();
+        $translator = $this->createTranslator();
+
+        $subject    = new RecursiveIteratorLocator($iterator, $validator, $translator);
+        $reflect    = $this->reflect($subject);
+
+        $this->assertSame($iterator,   $reflect->_getIterator(), 'The iterator was not properly set.');
+        $this->assertSame($validator,  $reflect->_getConfigValidator(), 'The validator was not properly set.');
+        $this->assertSame($translator, $reflect->_getTranslator(), 'The translator was not properly set.');
+    }
+
+    /**
      * Tests whether the subject can correctly locate modules.
      *
      * @since [*next-version*]
