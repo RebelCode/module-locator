@@ -44,7 +44,7 @@ abstract class AbstractRecursiveIteratorLocator extends AbstractIteratorLocator
      *
      * @since [*next-version*]
      *
-     * @param mixed $configSource The config source.
+     * @param array|object $configSource The config source.
      *
      * @return string The key that identifies the source.
      */
