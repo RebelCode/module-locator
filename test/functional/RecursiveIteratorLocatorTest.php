@@ -4,6 +4,7 @@ namespace RebelCode\Modular\Locator\FuncTest;
 
 use Dhii\I18n\StringTranslatorInterface;
 use Dhii\Validation\ValidatorInterface;
+use Iterator;
 use RebelCode\Modular\Locator\RecursiveIteratorLocator;
 use RecursiveArrayIterator;
 use Xpmock\TestCase;
@@ -15,6 +16,39 @@ use Xpmock\TestCase;
  */
 class RecursiveIteratorLocatorTest extends TestCase
 {
+    /**
+     * The class name of the test subject.
+     *
+     * @since [*next-version*]
+     */
+    const TEST_SUBJECT_CLASSNAME = 'RebelCode\Modular\Locator\RecursiveIteratorLocator';
+
+    /**
+     * Creates a new instance of the test subject.
+     *
+     * @since [*next-version*]
+     *
+     * @param bool                      $constructor True to use the original constructor, false to not.
+     * @param Iterator                  $iterator    The iterator of modules.
+     * @param ValidatorInterface        $validator   The config validator.
+     * @param StringTranslatorInterface $translator  The string translator.
+     *
+     * @return RecursiveIteratorLocator The created instance.
+     */
+    public function createInstance($constructor = false, $iterator = null, $validator = null, $translator = null)
+    {
+        $mock = $this->mock(static::TEST_SUBJECT_CLASSNAME);
+
+        if (!$constructor) {
+            return $mock->_getIterator($iterator)
+                        ->_getConfigValidator($validator)
+                        ->_getTranslator($translator)
+                        ->new();
+        }
+
+        return $mock->new($iterator, $validator, $translator);
+    }
+
     /**
      * Creates a new iterator instance for a given set of config data.
      *
@@ -68,7 +102,7 @@ class RecursiveIteratorLocatorTest extends TestCase
      */
     public function testCanBeCreated()
     {
-        $subject = new RecursiveIteratorLocator($this->createIterator([]), $this->createValidator());
+        $subject = $this->createInstance();
 
         $this->assertInstanceOf(
             'Dhii\\Modular\\Locator\\ModuleLocatorInterface', $subject,
@@ -87,12 +121,12 @@ class RecursiveIteratorLocatorTest extends TestCase
         $validator  = $this->createValidator();
         $translator = $this->createTranslator();
 
-        $subject    = new RecursiveIteratorLocator($iterator, $validator, $translator);
+        $subject    = $this->createInstance(true, $iterator, $validator, $translator);
         $reflect    = $this->reflect($subject);
 
-        $this->assertSame($iterator,   $reflect->_getIterator(), 'The iterator was not properly set.');
-        $this->assertSame($validator,  $reflect->_getConfigValidator(), 'The validator was not properly set.');
-        $this->assertSame($translator, $reflect->_getTranslator(), 'The translator was not properly set.');
+        $this->assertSame($iterator,   $reflect->iterator, 'The iterator was not properly set.');
+        $this->assertSame($validator,  $reflect->configValidator, 'The validator was not properly set.');
+        $this->assertSame($translator, $reflect->translator, 'The translator was not properly set.');
     }
 
     /**
@@ -120,7 +154,7 @@ class RecursiveIteratorLocatorTest extends TestCase
                 },
             ],
         ]);
-        $locator = new RecursiveIteratorLocator($iterator, $this->createValidator());
+        $locator = $this->createInstance(false, $iterator, $this->createValidator());
 
         $config = $locator->locate();
 
