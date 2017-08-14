@@ -33,6 +33,7 @@ class AbstractRecursiveIteratorLocatorTest extends TestCase
             ->_normalizeConfigArray(function($config) {
                 return $config;
             })
+            ->_validateConfig()
             ->__()
             ->_createModuleLocatorException()
             ->_createCouldNotReadSourceException()

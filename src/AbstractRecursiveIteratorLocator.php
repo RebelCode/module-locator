@@ -3,6 +3,7 @@
 namespace RebelCode\Modular\Locator;
 
 use Dhii\Modular\Locator\ModuleLocatorExceptionInterface;
+use Dhii\Validation\Exception\ValidationFailedExceptionInterface;
 use Exception;
 use Iterator;
 
@@ -36,7 +37,11 @@ abstract class AbstractRecursiveIteratorLocator extends AbstractIteratorLocator
             ? $config
             : iterator_to_array($config);
 
-        return $this->_normalizeConfigArray($array);
+        $normalized = $this->_normalizeConfigArray($array);
+
+        $this->_validateConfig($normalized);
+
+        return $normalized;
     }
 
     /**
@@ -66,6 +71,19 @@ abstract class AbstractRecursiveIteratorLocator extends AbstractIteratorLocator
      * @return array The standard config.
      */
     abstract protected function _normalizeConfigArray(array $config);
+
+    /**
+     * Validates a module configuration.
+     *
+     * @since [*next-version*]
+     *
+     * @param array $config The configuration to validate.
+     *
+     * @throws ValidationFailedExceptionInterface If config is invalid.
+     *
+     * @return $this
+     */
+    abstract protected function _validateConfig(array $config);
 
     /**
      * Translates a string, and replaces placeholders.

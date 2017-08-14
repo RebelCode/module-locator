@@ -84,8 +84,6 @@ class RecursiveIteratorLocator extends AbstractRecursiveIteratorLocator implemen
         $defaults   = $this->_getConfigDefaults();
         $normalized = array_merge($defaults, $config);
 
-        $this->_validateConfig($normalized);
-
         return $normalized;
     }
 
@@ -128,7 +126,7 @@ class RecursiveIteratorLocator extends AbstractRecursiveIteratorLocator implemen
      *
      * @return $this
      */
-    protected function _validateConfig($config)
+    protected function _validateConfig(array $config)
     {
         $this->_getConfigValidator()->validate($config);
 
