@@ -124,9 +124,9 @@ class RecursiveIteratorLocatorTest extends TestCase
         $subject    = $this->createInstance(true, $iterator, $validator, $translator);
         $reflect    = $this->reflect($subject);
 
-        $this->assertSame($iterator,   $reflect->iterator, 'The iterator was not properly set.');
-        $this->assertSame($validator,  $reflect->configValidator, 'The validator was not properly set.');
-        $this->assertSame($translator, $reflect->translator, 'The translator was not properly set.');
+        $this->assertSame($iterator,   $reflect->_getIterator(), 'The iterator was not properly set.');
+        $this->assertSame($validator,  $reflect->_getConfigValidator(), 'The validator was not properly set.');
+        $this->assertSame($translator, $reflect->_getTranslator(), 'The translator was not properly set.');
     }
 
     /**
