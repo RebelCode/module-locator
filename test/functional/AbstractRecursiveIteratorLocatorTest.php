@@ -71,7 +71,7 @@ class AbstractRecursiveIteratorLocatorTest extends TestCase
 
         // Ensure has is a non-empty string
         $this->assertInternalType('string', $key, 'Generated hash is not a string');
-        $this->assertGreaterThan(0, count($key), 'Generated hash is empty');
+        $this->assertGreaterThan(0, strlen($key), 'Generated hash is empty');
 
         // Ensure it gets called during locating
         $subject->mock()
