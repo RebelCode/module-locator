@@ -12,7 +12,7 @@
     "minimum-stability": "dev",
     "require": {
         "php": "^5.4 | ^7.0",
-        "dhii/data-container-interface": "dev-task/initial-interfaces",
+        "dhii/data-container-interface": "^0.1",
         "dhii/modular-interface": "dev-develop",
         "dhii/module-locator-abstract": "dev-develop",
         "dhii/validation-interface": "^0.1",
