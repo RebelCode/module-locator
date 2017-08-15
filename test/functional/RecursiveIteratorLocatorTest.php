@@ -105,7 +105,7 @@ class RecursiveIteratorLocatorTest extends TestCase
         $subject = $this->createInstance();
 
         $this->assertInstanceOf(
-            'Dhii\\Modular\\Locator\\ModuleLocatorInterface', $subject,
+            'Dhii\Modular\Locator\ModuleLocatorInterface', $subject,
             'Subject is not a valid instance'
         );
     }
