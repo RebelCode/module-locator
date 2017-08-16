@@ -2,6 +2,9 @@
 
 namespace RebelCode\Modular\Locator;
 
+use Dhii\Exception\InvalidArgumentExceptionInterface;
+use Dhii\I18n\StringTranslatingTrait;
+use Dhii\I18n\StringTranslatorConsumingTrait;
 use Dhii\Modular\Locator\ModuleLocatorExceptionInterface;
 use Dhii\Validation\Exception\ValidationFailedExceptionInterface;
 use Exception;
@@ -15,6 +18,13 @@ use Iterator;
  */
 abstract class AbstractRecursiveIteratorLocator extends AbstractIteratorLocator
 {
+    /*
+     * Provides functionality for translating strings.
+     *
+     * @since [*next-version*]
+     */
+    use StringTranslatingTrait;
+
     /**
      * Reads a config source into a standard config.
      *
@@ -55,7 +65,11 @@ abstract class AbstractRecursiveIteratorLocator extends AbstractIteratorLocator
      */
     protected function _generateKeyFromSource($configSource)
     {
-        return md5(json_encode($configSource));
+        if (is_array($configSource) || is_object($configSource)) {
+            return md5(json_encode($configSource));
+        }
+
+        throw $this->_createInvalidArgumentException($this->__('Config should be an array or an object.'));
     }
 
     /**
@@ -109,4 +123,23 @@ abstract class AbstractRecursiveIteratorLocator extends AbstractIteratorLocator
      * @return ModuleLocatorExceptionInterface The new exception.
      */
     abstract protected function _createModuleLocatorException($message = null, Exception $innerException = null);
+
+    /**
+     * Creates a new Dhii invalid argument exception.
+     *
+     * @since [*next-version*]
+     *
+     * @param string    $message  The error message.
+     * @param int       $code     The error code.
+     * @param Exception $previous The inner exception for chaining, if any.
+     * @param mixed     $argument The invalid argument, if any.
+     *
+     * @return InvalidArgumentExceptionInterface The new exception.
+     */
+    abstract protected function _createInvalidArgumentException(
+        $message = '',
+        $code = 0,
+        Exception $previous = null,
+        $argument = null
+    );
 }

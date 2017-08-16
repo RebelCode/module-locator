@@ -37,6 +37,7 @@ class AbstractRecursiveIteratorLocatorTest extends TestCase
             ->__()
             ->_createModuleLocatorException()
             ->_createCouldNotReadSourceException()
+            ->_createInvalidArgumentException()
             ->new();
 
         return $mock;

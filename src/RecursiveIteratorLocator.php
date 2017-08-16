@@ -2,6 +2,7 @@
 
 namespace RebelCode\Modular\Locator;
 
+use Dhii\Exception\CreateInvalidArgumentExceptionCapableTrait;
 use Dhii\I18n\StringTranslatorAwareTrait;
 use Dhii\I18n\StringTranslatorConsumingTrait;
 use Dhii\I18n\StringTranslatorInterface;
@@ -30,6 +31,13 @@ class RecursiveIteratorLocator extends AbstractRecursiveIteratorLocator implemen
      * @since [*next-version*]
      */
     use StringTranslatorConsumingTrait;
+
+    /*
+     * Provides functionality for creating invalid argument exceptions.
+     *
+     * @since [*next-version*]
+     */
+    use CreateInvalidArgumentExceptionCapableTrait;
 
     /**
      * The validator used to validate configuration.
