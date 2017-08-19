@@ -69,7 +69,7 @@ abstract class AbstractRecursiveIteratorLocator extends AbstractIteratorLocator
             return md5(json_encode($configSource));
         }
 
-        throw $this->_createInvalidArgumentException($this->__('Config should be an array or an object.'));
+        throw $this->_createInvalidArgumentException($this->__('Config source should be an array or an object.'));
     }
 
     /**
