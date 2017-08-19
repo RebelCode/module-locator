@@ -30,6 +30,8 @@ abstract class AbstractRecursiveIteratorLocator extends AbstractIteratorLocator
      *
      * @since [*next-version*]
      *
+     * @param iterable $config The condig source.
+     *
      * @throws ModuleLocatorException      If an error occurred while reading the config.
      * @throws CouldNotReadSourceException If the locator failed to read the config source.
      *
@@ -39,7 +41,7 @@ abstract class AbstractRecursiveIteratorLocator extends AbstractIteratorLocator
     {
         if (!($config instanceof Iterator) && !is_array($config)) {
             throw $this->_createModuleLocatorException(
-                $this->__('Argument must be an array or iterator.'), null
+                $this->__('Config source must be an iterable.'), null
             );
         }
 
