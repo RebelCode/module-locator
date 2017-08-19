@@ -12,11 +12,16 @@
     "minimum-stability": "dev",
     "require": {
         "php": "^5.4 | ^7.0",
-        "dhii/modular-interface": "dev-task/initial-interface",
-        "dhii/module-locator-abstract": "dev-task/implement-locator",
+        "dhii/data-container-interface": "^0.1",
+        "rebelcode/module-config-interface": "dev-develop",
+        "dhii/modular-interface": "dev-develop",
+        "dhii/module-locator-abstract": "dev-develop",
         "dhii/validation-interface": "^0.1",
         "dhii/i18n-helper-base": "dev-develop",
-        "rebelcode/module-config-interface": "dev-develop"
+        "dhii/i18n-interface": "dev-master",
+        "dhii/exception-interface": "dev-task/initial-interfaces",
+        "dhii/exception-helper-base": "dev-task/initial-classes",
+        "dhii/exception": "dev-task/initial-classes"
     },
     "require-dev": {
         "phpunit/phpunit": "^4.8",
@@ -30,5 +35,9 @@
         "psr-4": {
             "RebelCode\\Modular\\Locator\\": "src"
         }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "csfix": "php-cs-fixer fix -vvv"
     }
 }

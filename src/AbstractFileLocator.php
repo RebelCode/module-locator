@@ -46,4 +46,18 @@ abstract class AbstractFileLocator extends BaseLocator
     {
         return new CouldNotReadSourceException($message, 0, $innerException, $locator, $source);
     }
+
+    /**
+     * Determines a config key based on its source.
+     *
+     * @since [*next-version*]
+     *
+     * @param mixed $configSource The config source.
+     *
+     * @return string The key that identifies the source.
+     */
+    protected function _generateKeyFromSource($configSource)
+    {
+        return md5($configSource);
+    }
 }
